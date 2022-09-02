@@ -33,57 +33,67 @@ $( document ).ready(function() {
         callback: ( response, $captchaInputElement, numberOfTries ) => {
             debugger;
             if ( response == 'success' ) {
-                $.ajax(
-                    {
-                        type: "POST",
-                        url: "https://waaplicacionesiisi.azurewebsites.net/Help/Api/POST-CheckIT-RegistroLanding",
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded'
-                        },
-                        // contentType: false,
-                        // processData: false,
-                        // cache: false,
-                        data: {
-                            "Nombre": $('#txtNombre').val().trim(),
-                            "CorreoElectronico": $('#txtCorreo').val().trim(),
-                            "Telefono": $('#txtTelefono').val().trim(),
-                            "CodigoReferido": $('#txtCodigo').val().trim()
-                          },
-                        dataType: "json",
-                        crossDomain: true,
-                        success: function (data) {
-                            debugger;
-                            console.log(data)
-                            if (data.Respuesta === '') {
-                                HideLoading();
-                                Swal.fire(
-                                    'Éxito',
-                                    'Envío correcto',
-                                    'success'
-                                  )
-                                return false;
-                            } else {
-                                HideLoading();
-                                Swal.fire(
-                                    'Éxito',
-                                    `${data.Respuesta}`,
-                                    'success'
-                                  )
-                                return false;
-                            }
-                        },
-                        error: function (xhr) {
-                            console.log(xhr)
-                            HideLoading();
-                            Swal.fire(
-                                'Error',
-                                'Ocurrio un error al enviar la información, intenta nuevamente más tarde',
-                                'error'
-                              )
-                              return false;
-                        }
-                    }
-                )
+                // $.ajax(
+                //     {
+                //         type: "POST",
+                //         url: "https://waaplicacionesiisi.azurewebsites.net/Help/Api/POST-CheckIT-RegistroLanding",
+                //         headers: {
+                //             'Content-Type': 'application/x-www-form-urlencoded'
+                //         },
+                //         // contentType: false,
+                //         // processData: false,
+                //         // cache: false,
+                //         data: {
+                //             "Nombre": $('#txtNombre').val().trim(),
+                //             "CorreoElectronico": $('#txtCorreo').val().trim(),
+                //             "Telefono": $('#txtTelefono').val().trim(),
+                //             "CodigoReferido": $('#txtCodigo').val().trim()
+                //           },
+                //         dataType: "text/html",
+                //         crossDomain: true,
+                //         success: function (data) {
+                //             debugger;
+                //             console.log(data)
+                //             if (data.Respuesta === '') {
+                //                 HideLoading();
+                //                 Swal.fire(
+                //                     'Éxito',
+                //                     'Envío correcto',
+                //                     'success'
+                //                   )
+                //                 return false;
+                //             } else {
+                //                 HideLoading();
+                //                 Swal.fire(
+                //                     'Éxito',
+                //                     `${data.Respuesta}`,
+                //                     'success'
+                //                   )
+                //                 return false;
+                //             }
+                //         },
+                //         error: function (xhr) {
+                //             console.log(xhr)
+                //             HideLoading();
+                //             Swal.fire(
+                //                 'Error',
+                //                 'Ocurrio un error al enviar la información, intenta nuevamente más tarde',
+                //                 'error'
+                //               )
+                //               return false;
+                //         }
+                //     }
+                // )
+                $.post("https://waaplicacionesiisi.azurewebsites.net/Help/Api/POST-CheckIT-RegistroLanding",
+                {
+                    Nombre: $('#txtNombre').val().trim(),
+                    CorreoElectronico: $('#txtCorreo').val().trim(),
+                    Telefono: $('#txtTelefono').val().trim(),
+                    CodigoReferido: $('#txtCodigo').val().trim()
+                },
+                function(data,status){
+                alert("Data: " + data + "\nStatus: " + status);
+                });
                 // $.ajax({
     //         type: "POST",
     //         url: `https://siicdevseguridad.azurewebsites.net/Seguridad/Token`,
