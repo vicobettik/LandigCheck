@@ -48,6 +48,8 @@ $( document ).ready(function() {
                             "CodigoReferido": $('#txtCodigo').val().trim()
                           },
                         dataType: "json",
+                        crossDomain: true,
+                        dataType: 'jsonp',
                         success: function (data) {
                             debugger;
                             if (data.Respuesta === '') {
