@@ -33,14 +33,16 @@ $( document ).ready(function() {
         callback: ( response, $captchaInputElement, numberOfTries ) => {
             debugger;
             if ( response == 'success' ) {
-                alert('correcto');
                 $.ajax(
                     {
                         type: "POST",
                         url: "https://waaplicacionesiisi.azurewebsites.net/Help/Api/POST-CheckIT-RegistroLanding",
-                        contentType: false,
-                        processData: false,
-                        cache: false,
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        // contentType: false,
+                        // processData: false,
+                        // cache: false,
                         data: {
                             "Nombre": $('#txtNombre').val().trim(),
                             "CorreoElectronico": $('#txtCorreo').val().trim(),
@@ -49,22 +51,36 @@ $( document ).ready(function() {
                           },
                         dataType: "json",
                         crossDomain: true,
-                        dataType: 'jsonp',
                         success: function (data) {
                             debugger;
+                            console.log(data)
                             if (data.Respuesta === '') {
                                 HideLoading();
-                                window.location.href = conCuesHandler + "?pg=DescargaExcel";
+                                Swal.fire(
+                                    'Éxito',
+                                    'Envío correcto',
+                                    'success'
+                                  )
                                 return false;
                             } else {
                                 HideLoading();
-                                MostrarNotificacionToast(data.TipoToast, data.Respuesta)
+                                Swal.fire(
+                                    'Éxito',
+                                    `${data.Respuesta}`,
+                                    'success'
+                                  )
                                 return false;
                             }
                         },
                         error: function (xhr) {
+                            console.log(xhr)
                             HideLoading();
-                            MostrarNotificacionToast('danger', 'Tuvimos un problema, intenta nuevamente');
+                            Swal.fire(
+                                'Error',
+                                'Ocurrio un error al enviar la información, intenta nuevamente más tarde',
+                                'error'
+                              )
+                              return false;
                         }
                     }
                 )
@@ -142,8 +158,12 @@ $( document ).ready(function() {
 
             }
             if ( response == 'error' ) {
-                alert('incorrecto')
-                // error handle, e.g. add error class to captcha input
+                Swal.fire(
+                    'Error',
+                    'El captcha no es correcto',
+                    'error'
+                  )
+                  return false;
             }
         }
     });
