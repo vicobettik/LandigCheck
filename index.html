@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+  
+  <div id="preloader">
+      <div class="loader"></div>
+  </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="https://iisi.com.mx/" target="_blank">
+          <img src="./assets/img/logo.png" alt="" class="logoIISI">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link linkMenu" href="https://iisi.com.mx/contacto/" target="_blank">CONTACTO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link linkMenu" href="https://iisi.com.mx/iisi/" target="_blank">IISI</a>
+            </li>
+            <li class="nav-item linkMenu">
+              <a class="nav-link ankati" href="https://iisi.com.mx/ankati/" target="_blank">ANKATI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link linkMenu" href="tel:+525541449842" target="_blank"><i class="fa fa-phone" aria-hidden="true"></i> 5541449842</a>
+            </li>
+          </ul>
+          
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-2 onda">
+        <div class="row">
+
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5 mb-5 text-center">
+                <h1 class="text-center info">OBTÉN TU SUSCRIPCIÓN GRATUITA DE 90 DÍAS</h1>
+                <img src="./assets/img/logoCheck.png" alt="" class="logo text-center mt-5">
+                <p class="text-center">Check IT es una herramienta que permite traducir tus CFDIs emitidos y recibidos, así como validar vigencia y sin están en la lista negra del SAT. Únicamente tienes que tener instalado en tu equipo de cómputo Microsoft Excel versión 2013 o superior.</p>
+                <div class="divBotonCentrado">
+                  <button type="submit" class="btn btn-primary btnVerde" onclick="VerVideo()">MÁS INFORMACIÓN</button>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-4 forma">
+                <div class="row">
+                    <form class="mt-5 mb-4 col" id="formulario">
+                        <h3 class="text-center tituloBlanco">REGÍSTRATE AHORA:</h3>
+                        <br>
+                        <div class="form-row ml-4 mr-4">
+                            <label for="txtNombre" class="labelForma">Nombre:</label>
+                            <input type="text" class="form-control" id="txtNombre" placeholder="José López">
+                        </div>
+                        <div class="form-row ml-4 mr-4">
+                            <label for="txtCorreo" class="labelForma">Correo:</label>
+                            <input type="email" class="form-control" id="txtCorreo" placeholder="jose.lopez@tuempresa.com">
+                        </div>
+                        <div class="form-row ml-4 mr-4">
+                            <label for="txtTelefono" class="labelForma">Teléfono:</label>
+                            <input type="tel" class="form-control" id="txtTelefono" placeholder="(55) 5212345678">
+                        </div>
+                        <div class="form-row ml-4 mr-4">
+                          <label for="txtCodigo" class="labelForma">Código de referido (opcional):</label>
+                          <input type="text" class="form-control" id="txtCodigo" placeholder="JACG2022">
+                        </div>
+                        <div class="form-group form-check ml-4 mr-4">
+                            <input type="checkbox" class="form-check-input" id="check">
+                            <label class="form-check-label labelForma" for="exampleCheck1">Acepto el <a class="linkFoot" href="https://iisi.com.mx/aviso-de-privacidad/" target="_blank">Aviso de privacidad</a></label>
+                        </div>
+                        <div class="form-row ml-4 mr-4">
+                          <input class="jCaptcha form-control" type="text" placeholder="Escribe el resultado">
+                        </div>
+                        
+                        <!-- <div class="g-recaptcha form-group ml-4 mr-4" data-sitekey="6LfIKrYhAAAAABQAJLPTIZHllo37cJr6NzkptVjO"></div> -->
+                        <br>
+                        <div class="form-group form-check ml-4 mr-4 divBotonCentrado">
+                          <button type="submit" class="btn btn-primary btnVerde">REGÍSTRAME</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+
+        </div>
+    </div>
+
+    
+    <footer class="">
+      <div class="container-fluid footer">
+        <div class="row text-center pb-4 pt-4">
+          <div class="col-lg-4 mt-2">
+            <a class="linkFoot" href="tel:+525541449842" target="_blank"><i class="fa fa-phone" aria-hidden="true"></i> 5541449842</a>
+          </div>
+          <div class="col-lg-4 mt-2"> 
+            <a class="linkFoot" href="https://goo.gl/maps/eq9Ljd6CFa2Af35p8" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i> Nicolás San Juan 1132, Col Del Valle, Benito Juárez, CP 03310, CDMX</a></div>
+          <div class="col-lg-4 mt-1">
+            <a href="https://www.facebook.com/IISI.mx/" target="_blank" class="imgRed"><img src="./assets/img/icono-fb.png" alt=""></a>
+            <a href="https://www.instagram.com/iisi.mx/?utm_medium=copy_link" target="_blank" class="imgRed"><img src="./assets/img/icono-ig.png" alt=""></a>
+            <a href="https://www.linkedin.com/company/iisi-mx" target="_blank" class="imgRed"><img src="./assets/img/icono-ln.png" alt=""></a>
+            <a href="https://www.youtube.com/channel/UCRG-ZaQ40vpnyOhwCSLxFCg" target="_blank" class="imgRed"><img src="./assets/img/icono-yt.png" alt=""></a>
+            <a href="https://api.whatsapp.com/send?phone=5215541449842&text=Quiero%20contactar%20con%20ustedes" class="imgRed"><img src="./assets/img/icono-wa.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+</body>
+<script src="./scripts/jquery3.6.1.js"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="./scripts/script.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="./scripts/jcaptcha.js"></script>
+</html>

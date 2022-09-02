@@ -1,0 +1,205 @@
+
+  html, body {
+    height: 100%;
+  }
+
+  .forma{
+    background-color: rgba(0, 105, 84, 0.9);
+  }
+
+  .inputCentrado{
+    margin: 0 auto;
+  }
+
+  .labelForma{
+    color: white!important;
+  }
+
+  .menu{
+    color: black;
+    font-family: "SairaCondensed-Bold";
+  }
+
+  .nav-item{
+      margin-right: 50px;
+  }
+
+  .tituloBlanco{
+    color: #ffff;
+    font-family: "SairaCondensed-Bold";
+  }
+
+  .btnVerde{
+    background-color: #82bd31!important;
+    border-color: #82bd31!important;
+    border-radius: 15px!important;
+    padding-left: 50px!important;
+    padding-right: 50px!important;
+    padding-top: 10px!important;
+    padding-bottom: 10px!important;
+  }
+
+  .divBotonCentrado{
+    text-align: center;
+  }
+
+  .footer{
+    background-color: #0d6e57;
+    color: #ffff;
+    font-weight: bold;
+    font-size: 12px!important; 
+    margin-top: auto!important;
+  }
+
+  .ankati{
+    color: #60269e!important;
+  }
+
+  .linkMenu{
+    font-weight: bold;
+    color: black!important;
+  }
+
+  .imgRed{
+    margin-right: 30px;
+  }
+
+  .imgRed img{
+    height: 15px;
+  }
+
+  .logo{
+    width: 100%;
+  }
+
+  .logoIISI{
+    width: 70px;
+  }
+
+  .onda{
+    background-image: url("../assets/img/onda.svg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+  }
+
+  @media (min-width: 990px) {
+    .onda{
+      height: 90%;
+    }
+  }
+
+  .full-height {
+    height: 100%;
+  }
+
+  #preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    display: flex;
+}
+.loader{
+    margin: auto;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: relative;
+}
+.loader:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    border-radius: 50%;
+    opacity: 0;
+    animation: popin 1.5s linear infinite 0s;
+}
+.loader:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    border-radius: 50%;
+    opacity: 0;
+    animation: popin 1.5s linear infinite 0.5s;
+}
+
+@keyframes popin{
+  0%{
+      opacity: 0;
+      transform: scale(0);
+  }
+  1%{
+      opacity: 0.1;
+      transform: scale(0);
+  }
+  99%{
+      opacity: 0;
+      transform: scale(2);
+  }
+  100%{
+      opacity: 0;
+      transform: scale(0);
+  }
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgb(214, 214, 214)!important;
+}
+
+input{
+  color: black!important;
+}
+
+a.direccion {
+  color: white!important;
+}
+
+.info{
+  font-family: "SairaCondensed-Bold";
+}
+
+.linkFoot{
+  color: white;
+}
+
+.linkFoot:hover{
+  color: white;
+}
+
+@font-face {
+	font-family: "SairaCondensed-Regular";
+	src:  url('../fonts/Saira_Condensed-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "SairaCondensed-Light";
+	src: url('../fonts/Saira_Condensed-Light.ttf') format('truetype'), url('../fonts/SairaCondensed-Light.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "SairaCondensed-Bold";
+	src:  url('../fonts/Saira_Condensed-Bold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'Saira-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Saira Regular'), url('../fonts/Saira-Regular.woff') format('woff');
+  }
