@@ -37,7 +37,7 @@ $( document ).ready(function() {
                 $.ajax(
                     {
                         type: "POST",
-                        url: "http://waaplicacionesiisi.azurewebsites.net/Help/Api/POST-CheckIT-RegistroLanding",
+                        url: "https://waaplicacionesiisi.azurewebsites.net/Help/Api/POST-CheckIT-RegistroLanding",
                         contentType: false,
                         processData: false,
                         cache: false,
